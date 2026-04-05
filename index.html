@@ -1,78 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arjan Arya — Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjan Arya — I design things people use without thinking about it.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@300;400;500&family=Lora:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="#" class="logo">AA</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+
+<!-- NAV -->
+<div class="nav-wrap" id="navWrap">
+  <nav id="nav">
+    <span class="nav-name">Arjan Arya</span>
+    <span class="nav-monogram">AA</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <span class="theme-icon icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></svg>
+        </span>
+        <span class="theme-icon icon-moon">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+      <a href="mailto:hello@arjanarya.com" class="nav-cta">Let's talk →</a>
     </div>
   </nav>
+</div>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm <span class="highlight">Arjan Arya</span></h1>
-      <p class="tagline">Developer & Creator — building things that matter.</p>
-      <a href="#projects" class="btn">View My Work</a>
+<div class="page">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-eyebrow reveal">
+      <span class="avail-dot"></span>
+      Open to freelance · Bangalore, India
     </div>
-  </header>
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p class="about-text">
-        I'm a developer passionate about crafting clean, efficient, and user-friendly applications.
-        I love turning ideas into reality through code and continuously learning new technologies.
-      </p>
+    <h1 class="hero-headline reveal d1">Turning complexity<br>into clarity.</h1>
+    <p class="hero-sub sr-para">I'm Arjan — product designer at <strong>GrowthX</strong>, previously <strong>AB InBev</strong>. I make complex software feel effortless.</p>
+    <div class="hero-actions reveal d3">
+      <a href="https://www.behance.net/arjanarya" target="_blank" class="btn-primary">See the work ↗</a>
+      <a href="mailto:hello@arjanarya.com" class="btn-secondary">hello@arjanarya.com</a>
     </div>
   </section>
 
-  <section id="projects" class="section alt">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Project One</h3>
-          <p>A brief description of your first project goes here.</p>
-          <a href="#" class="link">Learn more →</a>
-        </div>
-        <div class="project-card">
-          <h3>Project Two</h3>
-          <p>A brief description of your second project goes here.</p>
-          <a href="#" class="link">Learn more →</a>
-        </div>
-        <div class="project-card">
-          <h3>Project Three</h3>
-          <p>A brief description of your third project goes here.</p>
-          <a href="#" class="link">Learn more →</a>
-        </div>
+  <hr>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-label reveal">About</div>
+    <p class="about-text sr-para">I studied transportation design. At its core, that means designing spaces people have to live inside. Every cockpit, every cabin, every dashboard is a tiny world someone inhabits under pressure. That lens never left me.</p>
+    <p class="about-text sr-para">Today I apply it to software. At GrowthX I own the mobile events platform end to end, from the moment a host decides to run an event to the moment an attendee walks in. Before that, I spent two years at AB InBev building AI tools and internal platforms for thousands of employees. One of them, Insights Copilot, grew from 100 users to 5,000 in a year. That kind of adoption does not happen by accident.</p>
+    <div class="about-meta reveal d3">
+      <div class="meta-item"><div class="meta-label">Currently</div><div class="meta-value">Product Designer @ GrowthX</div></div>
+      <div class="meta-item"><div class="meta-label">Previously</div><div class="meta-value">UI/UX Designer @ AB InBev</div></div>
+      <div class="meta-item"><div class="meta-label">Based in</div><div class="meta-value">Bangalore, India</div></div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="section-label reveal">What I do</div>
+    <div class="services-grid reveal d1">
+      <div class="service-card">
+        <div class="service-tag">Where I spend most of my time</div>
+        <div class="service-title">AI &amp; complex<br>product design</div>
+        <p class="service-desc sr-para">Most AI products feel like a science project. I've spent years making them feel like a tool. Copilots, chatbots, data dashboards that teams actually open on their own.</p>
+        <ul class="service-list"><li>AI assistant and copilot interfaces</li><li>Data dashboards and Power BI</li><li>Zero to one product design</li></ul>
+      </div>
+      <div class="service-card">
+        <div class="service-tag">The long game</div>
+        <div class="service-title">Design systems<br>that scale</div>
+        <p class="service-desc sr-para">I built and governed a 190-component design system at AB InBev. It reached 97% adoption in six months. The secret: systems that designers actually want to use.</p>
+        <ul class="service-list"><li>Component libraries and governance</li><li>Accessibility to WCAG standards</li><li>Handoff and dev collaboration</li></ul>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Get In Touch</h2>
-      <p>Have a project in mind or just want to chat? Reach out!</p>
-      <a href="mailto:your@email.com" class="btn">Say Hello</a>
+  <hr>
+
+  <!-- WORK -->
+  <section id="work" class="section">
+    <div class="work-header reveal">
+      <div class="section-label" style="margin-bottom:0">Selected Work</div>
+      <div class="work-count">8 projects</div>
+    </div>
+    <div class="work-list reveal d1">
+      <a href="https://www.behance.net/gallery/235196863/Insights-Copilot-Design-System-for-AI" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">01</span><div><div class="work-title">Insights Copilot — Design System for AI</div><div class="work-type">Design System · Enterprise · AI</div></div></div><div class="work-item-right"><span class="work-tag">Featured</span><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/235013385/CPG-Intel-AI-Platform-for-Business-Insights" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">02</span><div><div class="work-title">CPG Intel — AI Platform for Business Insights</div><div class="work-type">AI Platform · Data · B2B</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/235013067/Dev-Brewery-A-Control-Tower-for-DevOps-Governance" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">03</span><div><div class="work-title">Dev Brewery — DevOps Governance</div><div class="work-type">Control Tower · Enterprise Platform</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/234942663/FORT-Enterprise-Invoice-Reconciliation-Tool" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">04</span><div><div class="work-title">FORT — Enterprise Invoice Reconciliation</div><div class="work-type">Enterprise Tool · FinTech · UX</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/158135399/Bulletin-News-App-Brand-Identity-UI-Design" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">05</span><div><div class="work-title">Bulletin — News App &amp; Brand Identity</div><div class="work-type">Mobile App · Branding · UI Design</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/143080163/Hello-Mom-Pregnancy-TrackerApp" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">06</span><div><div class="work-title">Hello Mom — Pregnancy Tracker App</div><div class="work-type">Mobile App · Health · UI Design</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/233587315/Loop-Habit-Tracking-app" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">07</span><div><div class="work-title">Loop — Habit Tracking App</div><div class="work-type">Mobile App · Productivity</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
+      <a href="https://www.behance.net/gallery/134149633/Shaft-Cloud-Mining-Website-Design" target="_blank" class="work-item"><div class="work-item-left"><span class="work-num">08</span><div><div class="work-title">Shaft — Cloud Mining Website</div><div class="work-type">Website Design · Web3</div></div></div><div class="work-item-right"><div class="work-arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5v6"/></svg></div></div></a>
     </div>
   </section>
 
+  <hr>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-label reveal">Toolkit</div>
+    <div class="skills-row reveal d1">
+      <span class="skill-pill">Figma</span><span class="skill-pill">Framer</span><span class="skill-pill">Adobe XD</span><span class="skill-pill">Blender</span><span class="skill-pill">Miro / FigJam</span><span class="skill-pill">Mixpanel</span><span class="skill-pill">Power BI</span><span class="skill-pill">Chromatic</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">Heuristic Evaluation</span><span class="skill-pill">Journey Mapping</span><span class="skill-pill">WCAG Accessibility</span><span class="skill-pill">RICE Prioritisation</span><span class="skill-pill">Agile UX</span>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- PHILOSOPHY -->
+  <section class="section">
+    <div class="statement-block reveal">
+      <div class="statement-header">Something I actually believe</div>
+      <p class="statement-text sr-para">Most enterprise software is designed by people who never have to use it. I try to fix that. I run heatmaps, sit in feedback sessions, and look at drop-off data not because someone told me to, but because if I do not know where people get stuck, I am just guessing. The work I am most proud of is the kind the user never thought about. They just moved forward.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-label reveal">Get in touch</div>
+    <h2 class="contact-headline reveal d1">Got something<br><em>worth building?</em></h2>
+    <p class="contact-sub sr-para">I take on a small number of freelance projects at a time. If you are working on something with real complexity, AI products, dense data, messy workflows, let's find out if we are a good fit.</p>
+    <div class="contact-links-row reveal d3">
+      <a href="mailto:hello@arjanarya.com" class="contact-link filled">hello@arjanarya.com ↗</a>
+      <a href="https://www.linkedin.com/in/arjanarya" target="_blank" class="contact-link">LinkedIn</a>
+      <a href="https://www.behance.net/arjanarya" target="_blank" class="contact-link">Behance</a>
+      <a href="https://dribbble.com/arjanarya" target="_blank" class="contact-link">Dribbble</a>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Arjan Arya. Built with care.</p>
+    <span class="footer-copy">© 2026 Arjan Arya</span>
+    <div class="footer-right">
+      <a href="https://www.behance.net/arjanarya" target="_blank">Behance</a>
+      <a href="https://dribbble.com/arjanarya" target="_blank">Dribbble</a>
+      <a href="https://www.linkedin.com/in/arjanarya" target="_blank">LinkedIn</a>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
