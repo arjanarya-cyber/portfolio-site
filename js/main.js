@@ -22,10 +22,14 @@ var cursorRing = document.getElementById('cursorRing');
 var mx = -999, my = -999;
 var dotX = -999, dotY = -999;
 var ringX = -999, ringY = -999;
+var cursorDirty = false;
 
-document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
+document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; cursorDirty = true; });
 
 (function rafLoop() {
+  if (!cursorDirty) { requestAnimationFrame(rafLoop); return; }
+  cursorDirty = false;
+
   dotX = mx; dotY = my;
   ringX += (mx - ringX) * 0.18;
   ringY += (my - ringY) * 0.18;
@@ -172,10 +176,6 @@ document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
   var headline = document.querySelector('.hero-headline');
   if (!headline) return;
 
-  var styleOverride = document.createElement('style');
-  styleOverride.textContent = '.hero-headline .char { transition: none !important; }';
-  document.head.appendChild(styleOverride);
-
   function wrapChars(node) {
     if (node.nodeType === Node.TEXT_NODE) {
       var text = node.textContent;
@@ -219,27 +219,20 @@ document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
   }
   setTimeout(cacheRects, 300);
   window.addEventListener('resize', cacheRects, { passive: true });
-  window.addEventListener('scroll', cacheRects, { passive: true });
-
-  var mouseActive = false;
-  var mx2 = 0, my2 = 0;
+  var cacheRectsTicking = false;
+  window.addEventListener('scroll', function() {
+    if (!cacheRectsTicking) { requestAnimationFrame(function() { cacheRects(); cacheRectsTicking = false; }); cacheRectsTicking = true; }
+  }, { passive: true });
 
   var idleActive = true;
 
   headline.addEventListener('mouseenter', function() {
     idleActive = false;
-    mouseActive = true;
   });
   headline.addEventListener('mouseleave', function() {
     idleActive = true;
-    mouseActive = false;
     for (var i = 0; i < target.length; i++) target[i] = BASE;
   });
-
-  document.addEventListener('mousemove', function(e) {
-    mx2 = e.clientX;
-    my2 = e.clientY;
-  }, { passive: true });
 
   var LERP_SPEED = 0.12;
 
@@ -249,10 +242,10 @@ document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
       for (var i = 0; i < chars.length; i++) {
         target[i] = BASE + Math.sin(t + i * 0.4) * 100;
       }
-    } else if (mouseActive && rects.length) {
+    } else if (rects.length) {
       for (var i = 0; i < rects.length; i++) {
-        var dx = mx2 - rects[i].x;
-        var dy = my2 - rects[i].y;
+        var dx = mx - rects[i].x;
+        var dy = my - rects[i].y;
         var dist = Math.sqrt(dx * dx + dy * dy);
         var prox = Math.max(0, 1 - dist / RADIUS);
         prox = prox * prox * (3 - 2 * prox);

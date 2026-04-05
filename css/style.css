@@ -287,7 +287,6 @@ nav {
   font-family: var(--sans);
   font-style: normal;
   will-change: font-weight;
-  transition: font-weight 0.08s ease;
 }
 
 .hero-headline .char-space {
@@ -713,7 +712,7 @@ footer {
 }
 
 /* ── CUSTOM CURSOR ── */
-* { cursor: none !important; }
+body, body a, body button, body .skill-pill, body .work-item, body .service-card, body .theme-btn { cursor: none !important; }
 
 #cursorDot {
   position: fixed;
@@ -792,4 +791,20 @@ footer {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0);
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .sr-word {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero-headline .char { font-weight: 300 !important; }
 }
